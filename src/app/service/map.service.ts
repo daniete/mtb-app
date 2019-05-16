@@ -44,7 +44,6 @@ export class MapService {
 
   addVectorLayer(layer) {
     this.getMap().addLayer(layer);
-    return layer;
   }
 
   removeLayer(layer) {
