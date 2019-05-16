@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {gpxArray} from '../domain/GPX';
 
 @Component({
   selector: 'legende',
@@ -7,15 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LegendComponent implements OnInit {
 
-  constructor() { }
+  gpxFiles = gpxArray
 
-  legendModus: boolean = true;
+  constructor() {
 
-  ngOnInit() {
   }
 
-  toggleModus(modus) {
-    this.legendModus = modus;
+  ngOnInit() {
   }
 
 }

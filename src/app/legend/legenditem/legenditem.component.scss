@@ -1,0 +1,16 @@
+.legend-item {
+  padding-right: 10px;
+
+  span {
+    float: right;
+  }
+}
+
+.legend-item:hover {
+  background-color: #7b98bc;
+
+  label {
+    color:white;
+  }
+
+}

@@ -1,3 +1,4 @@
-<p>
-  legenditem works!
-</p>
+<div class="legend-item" (click)="toggleVisible()">
+  <label >{{gpx.name}}</label>
+  <span class="glyphicon" [class.glyphicon-check]="gpx.shown" [class.glyphicon-unchecked]="!gpx.shown"></span>
+</div>
