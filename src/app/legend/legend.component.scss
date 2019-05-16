@@ -21,22 +21,23 @@ $light-color: green;
 
 li {
   padding: 5px;
+  width: 100%;
 }
 
-li:hover {
-  color: white;
-  background-color: $primary-color;
-}
+//li:hover {
+//  color: white;
+//  background-color: $primary-color;
+//}
 
-li.active {
-  color: $light-color;
-  background-color: white;
-}
-
-li.active:hover {
-  color: $light-color;
-  background-color: white;
-}
+//li.active {
+//  color: $light-color;
+//  background-color: white;
+//}
+//
+//li.active:hover {
+//  color: $light-color;
+//  background-color: white;
+//}
 
 .toolbutton {
   position: relative;
