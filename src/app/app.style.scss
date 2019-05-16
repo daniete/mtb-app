@@ -16,22 +16,6 @@ $light-gray: grey;
     resize: both;
   }
 
-  .primary-green {
-    color: $primary-color;
-  }
-
-  .dark-green {
-    color: $dark-color;
-  }
-
-  .light-green {
-    color: $light-color;
-  }
-
-  .light-gray {
-    color: $light-gray;
-  }
-
   .flemish-gray {
     color: $flemish-gray;
   }
@@ -68,19 +52,17 @@ $light-gray: grey;
 
   .mtb-body {
     width: 100%;
-    height: -moz-calc(100vh - 88px);
-    height: -webkit-calc(100vh - 88px);
-    height: calc(100vh - 88px);
+    height: -moz-calc(100vh - 94px);
+    height: -webkit-calc(100vh - 94px);
+    height: calc(100vh - 94px);
     position: relative;
   }
 
   .mtb-header {
-    height: 44px;
-    background-color: grey;
+    background-color: white;
     width: 100%;
-    color: white;
-    text-align: center;
-    line-height: 44px;
+    color: black;
+    line-height: 60px;
   }
 
   .mtb-map {
@@ -108,7 +90,7 @@ $light-gray: grey;
     width: 100%;
     color: white;
     padding-left: 21px;
-    line-height: 44px;
+    line-height: 20px;
   }
 
   .max-height {
@@ -117,10 +99,6 @@ $light-gray: grey;
 
   .mtb-map-overlay {
     height: 100%;
-  }
-
-  .ol-scale-line {
-    background-color: red;
   }
 
   .ol-control button {
