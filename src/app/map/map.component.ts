@@ -59,9 +59,19 @@ export class MapComponent implements OnInit {
       ]
     });
 
+    var vector = new VectorLayer({
+      source: new VectorSource({
+        url: './assets/gpx/schoonderbuken-63km.gpx',
+        format: new GPX()
+      }),
+      style: function(feature) {
+        return style[feature.getGeometry().getType()];
+      }
+    });
+
     let map = new Map({
       interactions: defaultInteractions().extend([dragAndDropInteraction]),
-      layers: [this.layer],
+      layers: [this.layer, vector],
       target: 'map',
       view: this.view,
       controls: defaultControls().extend([
