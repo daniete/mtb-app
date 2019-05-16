@@ -8,6 +8,8 @@ import {FooterComponent} from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { MapComponent } from './map/map.component';
 import { InfoComponent } from './info/info.component';
+import { LegendComponent } from './legend/legend.component';
+import { LegenditemComponent } from './legend/legenditem/legenditem.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { InfoComponent } from './info/info.component';
     FooterComponent,
     HeaderComponent,
     MapComponent,
-    InfoComponent
+    InfoComponent,
+    LegendComponent,
+    LegenditemComponent
   ],
   imports: [
     BrowserModule,
