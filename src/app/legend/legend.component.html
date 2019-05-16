@@ -6,5 +6,6 @@
   </div>
   <div class="panel-body">
     <legenditem *ngFor="let gpxFile of gpxFiles" [gpx]=gpxFile ></legenditem>
+    <legenditem *ngFor="let gpxFile of mapService.dragAndDropLayers" [gpx]=gpxFile></legenditem>
   </div>
 </div>

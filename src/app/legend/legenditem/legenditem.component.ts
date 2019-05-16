@@ -1,7 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {gpxType} from '../../domain/GPX';
-import VectorLayer from 'ol/layer/Vector';
-import {Vector as VectorSource} from 'ol/source';
 import {GPX} from 'ol/format';
 import {MapService} from '../../service/map.service';
 
@@ -12,8 +10,6 @@ import {MapService} from '../../service/map.service';
 })
 export class LegenditemComponent implements OnInit{
 
-  layer;
-
   @Input() gpx: gpxType;
 
   constructor(
@@ -22,35 +18,22 @@ export class LegenditemComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.gpx.path = './assets/gpx/' + this.gpx.name + '.gpx'
+    this.gpx.path = './assets/gpx/' + this.gpx.name + '.gpx';
 
+    if (!this.gpx.isDragDropLayer) {
+      this.gpx.layer = this.mapService.createGPXlayer(this.gpx.path);
+    }
     if (this.gpx.shown) {
-      this.addLayer()
+      this.mapService.addVectorLayer(this.gpx.layer);
     }
   }
 
-  addLayer() {
-    let scope = this;
-    this.layer = new VectorLayer({
-      source: new VectorSource({
-        url: this.gpx.path,
-        format: new GPX()
-      }),
-      style: function (feature) {
-        return scope.mapService.getStyle()[feature.getGeometry().getType()];
-      }
-    });
-    this.mapService.addVectorLayer(this.layer);
-  }
-
   toggleVisible() {
-    let scope = this;
-    if (!this.layer) {
-      this.addLayer()
+    if (!this.gpx.shown) {
+      this.gpx.layer = this.mapService.addVectorLayer(this.gpx.layer);
       this.toggleCheck();
     } else {
-      this.mapService.removeLayer(this.layer);
-      this.layer = null;
+      this.mapService.removeLayer(this.gpx.layer);
       this.toggleCheck();
     }
   }
