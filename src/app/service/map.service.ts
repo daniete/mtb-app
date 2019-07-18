@@ -46,6 +46,19 @@ export class MapService {
     this.getMap().addLayer(layer);
   }
 
+  addGpx(gpx) {
+    let scope = this;
+    this.addVectorLayer(gpx.layer);
+    if (!Number.isFinite(gpx.layer.getSource().getExtent()[0])) {
+      gpx.layer.getSource().on("change", function() {
+        let extent = gpx.layer.getSource().getExtent();
+        scope.getMap().getView().fit(extent, scope.getMap().getSize());
+      });
+    } else {
+      this.getMap().getView().fit(gpx.layer.getSource().getExtent(), scope.getMap().getSize());
+    }
+  }
+
   removeLayer(layer) {
     this.getMap().removeLayer(layer);
   }

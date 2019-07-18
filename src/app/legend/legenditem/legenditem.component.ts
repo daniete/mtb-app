@@ -29,22 +29,12 @@ export class LegenditemComponent implements OnInit{
   }
 
   toggleVisible() {
-    let scope = this;
     if (!this.gpx.shown) {
-      this.mapService.addVectorLayer(this.gpx.layer);
-      if (!Number.isFinite(this.gpx.layer.getSource().getExtent()[0])) {
-        this.gpx.layer.getSource().on("change", function() {
-          let extent = scope.gpx.layer.getSource().getExtent();
-          scope.mapService.getMap().getView().fit(extent, scope.mapService.getMap().getSize());
-        });
-      } else {
-        scope.mapService.getMap().getView().fit(this.gpx.layer.getSource().getExtent(), scope.mapService.getMap().getSize());
-      }
-      this.toggleCheck();
+      this.mapService.addGpx(this.gpx);
     } else {
       this.mapService.removeLayer(this.gpx.layer);
-      this.toggleCheck();
     }
+    this.toggleCheck();
   }
 
   toggleCheck() {
