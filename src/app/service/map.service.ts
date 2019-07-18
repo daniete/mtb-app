@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {GeoJSON, GPX, IGC, KML, TopoJSON} from 'ol/format';
 import {Circle as CircleStyle, Fill, Stroke, Style} from 'ol/style';
-import {DragAndDrop, Select, Modify} from 'ol/interaction.js';
+import {DragAndDrop} from 'ol/interaction.js';
 import {Vector as VectorSource} from 'ol/source.js';
 import VectorLayer from 'ol/layer/Vector';
 import {gpxType} from '../domain/GPX';
@@ -21,7 +21,6 @@ export class MapService {
   setMap(map) {
     this.map = map;
     this.mapResolution = map.getView().getResolution();
-    this.addModifyInteraction();
     this.addDragAndDrop();
   }
 
@@ -92,21 +91,6 @@ export class MapService {
         })
       })
     };
-  }
-
-  addModifyInteraction() {
-
-    var select = new Select({
-      wrapX: false
-    });
-
-    var modify = new Modify({
-      features: select.getFeatures()
-    });
-
-    this.map.addInteraction(select);
-    this.map.addInteraction(modify);
-
   }
 
   addDragAndDrop() {
