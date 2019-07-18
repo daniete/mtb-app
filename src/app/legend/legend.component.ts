@@ -9,7 +9,7 @@ import {MapService} from '../service/map.service';
 })
 export class LegendComponent implements OnInit {
 
-  gpxFiles = gpxArray
+  gpxFiles = gpxArray;
 
   constructor(
     public mapService: MapService
