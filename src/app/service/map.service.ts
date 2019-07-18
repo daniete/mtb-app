@@ -54,6 +54,7 @@ export class MapService {
       gpx.layer.getSource().on("change", function() {
         let extent = gpx.layer.getSource().getExtent();
         scope.getMap().getView().fit(extent, scope.getMap().getSize());
+        gpx.layer.getSource().removeEventListener('change')
       });
     } else {
       this.getMap().getView().fit(gpx.layer.getSource().getExtent(), scope.getMap().getSize());
