@@ -32,10 +32,12 @@ export class LegenditemComponent implements OnInit{
     let scope = this;
     if (!this.gpx.shown) {
       this.mapService.addVectorLayer(this.gpx.layer);
+      console.log(this.gpx.layer.getSource().getExtent());
       if (!Number.isFinite(this.gpx.layer.getSource().getExtent()[0])) {
-        this.gpx.layer.getSource().on("change", function() {
+        this.gpx.layer.getSource().on('change', function() {
           let extent = scope.gpx.layer.getSource().getExtent();
           scope.mapService.getMap().getView().fit(extent, scope.mapService.getMap().getSize());
+          scope.gpx.layer.getSource().removeEventListener('change')
         });
       } else {
         scope.mapService.getMap().getView().fit(this.gpx.layer.getSource().getExtent(), scope.mapService.getMap().getSize());

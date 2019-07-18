@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {GeoJSON, GPX, IGC, KML, TopoJSON} from 'ol/format';
 import {Circle as CircleStyle, Fill, Stroke, Style} from 'ol/style';
-import {DragAndDrop} from 'ol/interaction.js';
+import {defaults as defaultInteractions, DragAndDrop, Select, Modify} from 'ol/interaction.js';
 import {Vector as VectorSource} from 'ol/source.js';
 import VectorLayer from 'ol/layer/Vector';
 import {gpxType} from '../domain/GPX';
@@ -21,33 +21,12 @@ export class MapService {
   setMap(map) {
     this.map = map;
     this.mapResolution = map.getView().getResolution();
+    this.addModifyInteraction();
     this.addDragAndDrop();
   }
 
   getMap() {
     return this.map;
-  }
-
-  createGPXlayer(gpxPath) {
-    let scope = this;
-    let layer = new VectorLayer({
-      source: new VectorSource({
-        url: gpxPath,
-        format: new GPX()
-      }),
-      style: function (feature) {
-        return scope.getStyle()[feature.getGeometry().getType()];
-      }
-    });
-    return layer;
-  }
-
-  addVectorLayer(layer) {
-    this.getMap().addLayer(layer);
-  }
-
-  removeLayer(layer) {
-    this.getMap().removeLayer(layer);
   }
 
   getStyle() {
@@ -72,11 +51,48 @@ export class MapService {
       }),
       'MultiLineString': new Style({
         stroke: new Stroke({
-          color: '#f00',
+          color: '#00F',
           width: 3
         })
       })
     };
+  }
+
+  createGPXlayer(gpxPath) {
+    let scope = this;
+    let layer = new VectorLayer({
+      source: new VectorSource({
+        url: gpxPath,
+        format: new GPX()
+      }),
+      style: function (feature) {
+        return scope.getStyle()[feature.getGeometry().getType()];
+      }
+    });
+    return layer;
+  }
+
+  addVectorLayer(layer) {
+    this.getMap().addLayer(layer);
+  }
+
+  removeLayer(layer) {
+    this.getMap().removeLayer(layer);
+  }
+
+  addModifyInteraction() {
+
+    var select = new Select({
+      wrapX: false
+    });
+
+    var modify = new Modify({
+      features: select.getFeatures()
+    });
+
+    this.map.addInteraction(select);
+    this.map.addInteraction(modify);
+
   }
 
   addDragAndDrop() {
