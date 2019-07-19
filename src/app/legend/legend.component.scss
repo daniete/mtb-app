@@ -17,61 +17,10 @@ $light-color: green;
 .legende-panel {
   overflow-y: auto;
   pointer-events: auto;
+  border-radius: 0 !important;
 }
 
 li {
   padding: 5px;
   width: 100%;
-}
-
-//li:hover {
-//  color: white;
-//  background-color: $primary-color;
-//}
-
-//li.active {
-//  color: $light-color;
-//  background-color: white;
-//}
-//
-//li.active:hover {
-//  color: $light-color;
-//  background-color: white;
-//}
-
-.toolbutton {
-  position: relative;
-  padding-left: 5px;
-  padding-right: 5px;
-  text-align: center;
-}
-
-.button .tooltiptext {
-  visibility: hidden;
-  width: auto;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 100;
-  top: 150%;
-  left: -200%;
-  //margin-left: -60px;
-}
-
-.button .tooltiptext::after {
-  content: "";
-  position: absolute;
-  bottom: 100%;
-  left: 90%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent black transparent;
-}
-
-.button:hover .tooltiptext {
-  visibility: visible;
 }

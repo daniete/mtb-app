@@ -7,9 +7,11 @@ import { AppComponent } from './app.component';
 import {FooterComponent} from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { MapComponent } from './map/map.component';
-import { InfoComponent } from './info/info.component';
 import { LegendComponent } from './legend/legend.component';
 import { LegenditemComponent } from './legend/legenditem/legenditem.component';
+import { TeamComponent } from './team/team.component';
+import { HomeComponent } from './home/home.component';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,11 @@ import { LegenditemComponent } from './legend/legenditem/legenditem.component';
     FooterComponent,
     HeaderComponent,
     MapComponent,
-    InfoComponent,
     LegendComponent,
-    LegenditemComponent
+    LegenditemComponent,
+    TeamComponent,
+    HomeComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,

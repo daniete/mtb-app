@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  mobileMenu;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleMobileMenu() {
+    this.mobileMenu = !this.mobileMenu;
   }
 
 }

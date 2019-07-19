@@ -52,9 +52,16 @@ $light-gray: grey;
 
   .mtb-body {
     width: 100%;
-    height: -moz-calc(100vh - 94px);
-    height: -webkit-calc(100vh - 94px);
-    height: calc(100vh - 94px);
+    @media(max-width: 767px) {
+      height: -moz-calc(100vh - 165px);
+      height: -webkit-calc(100vh - 165px);
+      height: calc(100vh - 165px);
+    }
+    @media(min-width: 767px) {
+      height: -moz-calc(100vh - 94px);
+      height: -webkit-calc(100vh - 94px);
+      height: calc(100vh - 94px);
+    }
     position: relative;
   }
 
