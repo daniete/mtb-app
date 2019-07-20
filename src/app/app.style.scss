@@ -1,40 +1,10 @@
-$primary-color: rgba(83,104,44,1);  // Groene kleur Huisstijl ovam
-$dark-color: #434f27;               // Groene donkere kleur voor effecten
-$light-color: #b8c400;              // Lichtgroene kleur
-$flemish-gray: #333;                // Grijze kleur huisstijl vlaamse overheid
-$light-gray: grey;
-
 @media screen {
-  .panel {
-    -webkit-border-radius: 0 !important;
-    -moz-border-radius: 0 !important;
-    border-radius: 0 !important;
-    margin-bottom: 0px !important;
-  }
-
-  .resize {
-    resize: both;
-  }
-
-  .flemish-gray {
-    color: $flemish-gray;
-  }
-
-  .background-white:hover {
-    background-color: white;
-  }
-
-  .inner-white {
-    color: white;
-  }
-
   html, body {
     height: 100%;
     font-family: Calibri, sans-serif;
     padding: 0;
     margin: 0;
     position: relative;
-    background-color: $light-color;
     min-width: 1024px;
     overflow: hidden;
   }
@@ -55,16 +25,6 @@ $light-gray: grey;
     height: -moz-calc(100vh - 112px);
     height: -webkit-calc(100vh - 112px);
     height: calc(100vh - 112px);
-    //@media(max-width: 767px) {
-    //  height: -moz-calc(100vh - 165px);
-    //  height: -webkit-calc(100vh - 165px);
-    //  height: calc(100vh - 165px);
-    //}
-    //@media(min-width: 767px) {
-    //  height: -moz-calc(100vh - 94px);
-    //  height: -webkit-calc(100vh - 94px);
-    //  height: calc(100vh - 94px);
-    //}
     position: relative;
   }
 
@@ -73,23 +33,6 @@ $light-gray: grey;
     width: 100%;
     color: black;
     line-height: 60px;
-  }
-
-  .mtb-map {
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: relative;
-    background-color: white;
-  }
-
-  .mtb-map #map {
-    height: 100%;
-    width: 100%;
-  }
-
-  .mtb-map #map .ol-viewport {
-    overflow: visible !important;
   }
 
   .mtb-footer {
@@ -105,13 +48,6 @@ $light-gray: grey;
 
   .max-height {
     height: 100%;
-  }
-
-  .ol-control button {
-    background-color: rgba(40, 40, 40, 0.8) !important;
-  }
-  .ol-control button:hover {
-    background-color: rgba(40, 40, 40, 1) !important;
   }
 
 }

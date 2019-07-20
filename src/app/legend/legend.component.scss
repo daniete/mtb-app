@@ -3,6 +3,10 @@ $light-color: green;
 .panel {
   overflow: hidden;
   max-height: 100%;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .panel-body {
