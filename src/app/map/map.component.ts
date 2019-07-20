@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 
 import OlXYZ from 'ol/source/XYZ';
 import OlTileLayer from 'ol/layer/Tile';
@@ -19,7 +19,7 @@ import {MapService} from '../service/map.service';
   ]
 })
 
-export class MapComponent implements OnInit {
+export class MapComponent implements OnInit, OnDestroy {
 
   map: Map;
   layer: OlTileLayer;
@@ -80,6 +80,10 @@ export class MapComponent implements OnInit {
       scope.mapService.mapResolution = view.getResolution();
     },this);
     this.mapService.setMap(map);
+  }
+
+  ngOnDestroy(): void {
+    document.getElementById('scale-line').innerHTML = '';
   }
 
 }

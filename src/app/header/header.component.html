@@ -1,39 +1,31 @@
-<header role="banner">
+<div class="header">
   <div class="nav-container">
-    <nav id="header-navigation" class="main-navigation navbar navbar-default" role="navigation">
+    <nav id="header-navigation" class="main-navigation navbar navbar-default">
       <div class="container nav-bar">
-        <div class="flex-row">
-          <div class="title-container module left">
+        <div class="row">
+        <div class="title-container">
+          <div class="title">
             <a routerLink="">
               <img class="diamond-img" src="../assets/img/diamond.jpg">
-               Team Diamond MTB App
+              Team Diamond MTB
               <img class="diamond-img" src="../assets/img/diamond.jpg">
             </a>
           </div>
-          <div class="module right visible-xs">
-            <i class="fa fa-2x fa-caret-square-o-down" (click)="toggleMobileMenu()"></i>
-          </div>
-          <div class="module-group right">
-            <div class="module left">
-              <div class="navbar-default">
-                <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul id="menu" class="menu nav navbar-nav">
-                  <li><a routerLink="home" routerLinkActive="active">Home</a></li>
-                  <li><a routerLink="map" routerLinkActive="active">Map</a></li>
-                  <li><a routerLink="team" routerLinkActive="active">Team</a></li>
-                  <li><a routerLink="weather" routerLinkActive="active">Weather</a></li>
-                </ul>
-              </div>
-              </div>
-            </div>
-          </div>
-          <div class="module right visible-lg visible-md visible-sm">
-            <a href="https://sites.google.com/site/atbcross/" target="_blank" style="display: inline-block">
-              ATB Cross <i class="fa fa-bicycle"></i>
-            </a>
+          <div class="right mobile-menu">
+            <i class="fa fa-2x fa-bars" (click)="toggleMobileMenu()"></i>
           </div>
         </div>
+        <div class="nav-menu" [ngClass]="{'display-none': mobileMenu}">
+          <ul class="menu nav navbar-nav">
+            <li><a routerLink="home" routerLinkActive="active" (click)="toggleMobileMenu()">Home</a></li>
+            <li><a routerLink="map" routerLinkActive="active" (click)="toggleMobileMenu()">Map</a></li>
+            <li><a routerLink="team" routerLinkActive="active" (click)="toggleMobileMenu()">Team</a></li>
+            <li><a routerLink="weather" routerLinkActive="active" (click)="toggleMobileMenu()">Weather</a></li>
+            <li><a href="https://sites.google.com/site/atbcross/" target="_blank" (click)="toggleMobileMenu()">ATB</a></li>
+          </ul>
+        </div>
+      </div>
       </div>
     </nav>
   </div>
-</header>
+</div>
