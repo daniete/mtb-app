@@ -29,9 +29,17 @@ export class GpxEnum {
     layer: null,
     isDragDropLayer: false
   };
+  static TEST: gpxType = {
+    name: 'Testritje',
+    path: '',
+    shown: true,
+    layer: null,
+    isDragDropLayer: false
+  };
 }
 
 export const gpxArray: gpxType[] = [
   GpxEnum.SCHOONDERBUKEN,
   GpxEnum.WILLEBRINGEN,
+  GpxEnum.TEST
 ];
