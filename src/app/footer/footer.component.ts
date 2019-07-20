@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NavigationEnd, Router} from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -8,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 
 export class FooterComponent implements OnInit {
 
-  constructor() {  }
+  route;
+
+  constructor(
+    private router: Router
+  ) {  }
 
   ngOnInit() {
+    this.router.events.subscribe((val) => {
+      // see also
+      if(val instanceof NavigationEnd) {
+        this.route = val.url;
+      }
+    });
+  }
+
+  onMap() {
+    return this.route === '/map';
   }
 
 }
