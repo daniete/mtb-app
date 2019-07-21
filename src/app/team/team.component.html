@@ -1,5 +1,17 @@
-<div class="container">
-  <h3>
-    The Team
-  </h3>
+<div class="background-image">
+  <div class="container">
+  </div>
+  <div *ngFor="let member of teamConfig" class="container">
+    <div class="row text-center">
+      <h3 class="name">
+        {{member.name}}
+      </h3>
+    </div>
+    <div class="row text-center">
+      <p>
+        {{member.text}}
+      </p>
+      <img class="team-img" [src]=member.imgSrc alt="">
+    </div>
+  </div>
 </div>
