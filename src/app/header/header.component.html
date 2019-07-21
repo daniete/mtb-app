@@ -8,13 +8,13 @@
   <button style="float: right" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <i class="nav-bars fa fa-bars"></i>
   </button>
-  <div class="collapse navbar-collapse navbar-right" id="navbarNav">
+  <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav navbar-right">
-      <li class="nav-item"><a class="nav-link header-text" routerLink="home">Home</a></li>
-      <li class="nav-item"><a class="nav-link header-text" routerLink="map">Map</a></li>
-      <li class="nav-item"><a class="nav-link header-text" routerLink="team">Team</a></li>
-      <li class="nav-item"><a class="nav-link header-text" routerLink="weather">Weather</a></li>
-      <li class="nav-item"><a class="nav-link header-text" href="https://sites.google.com/site/atbcross/" target="_blank" (click)="toggleMobileMenu()">ATB</a></li>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show"><a class="nav-link header-text" routerLink="home">Home</a></li>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show"><a class="nav-link header-text" routerLink="map">Map</a></li>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show"><a class="nav-link header-text" routerLink="team">Team</a></li>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show"><a class="nav-link header-text" routerLink="weather">Weather</a></li>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show"><a class="nav-link header-text" href="https://sites.google.com/site/atbcross/" target="_blank" (click)="toggleMobileMenu()">ATB</a></li>
     </ul>
   </div>
   </div>
