@@ -34,14 +34,14 @@ export class MapComponent implements OnInit, OnDestroy {
   }
 
   initializeMap() {
-    let scope = this;
+    const scope = this;
     this.layer = new OlTileLayer({
       source: new OlXYZ({
         url: 'http://tile.osm.org/{z}/{x}/{y}.png'
       })
     });
 
-    let map = new Map({
+    const map = new Map({
       layers: [this.layer],
       target: 'map',
       view: new View({
@@ -75,10 +75,10 @@ export class MapComponent implements OnInit, OnDestroy {
       ]),
     });
 
-    let view = map.getView();
+    const view = map.getView();
     view.on('change:resolution', function() {
       scope.mapService.mapResolution = view.getResolution();
-    },this);
+    }, this);
     this.mapService.setMap(map);
   }
 
