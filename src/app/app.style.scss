@@ -22,10 +22,26 @@
 
   .mtb-body {
     width: 100%;
-    height: -moz-calc(100vh - 112px);
-    height: -webkit-calc(100vh - 112px);
-    height: calc(100vh - 112px);
+    height: -moz-calc(100vh - 122px);
+    height: -webkit-calc(100vh - 122px);
+    height: calc(100vh - 122px);
     position: relative;
+  }
+
+  @media screen and (min-width: 768px) {
+    .mtb-body{
+      height: -moz-calc(100vh - 122px);
+      height: -webkit-calc(100vh - 122px);
+      height: calc(100vh - 122px);
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .mtb-body{
+      height: -moz-calc(100vh - 112px);
+      height: -webkit-calc(100vh - 112px);
+      height: calc(100vh - 112px);
+    }
   }
 
   .mtb-header {

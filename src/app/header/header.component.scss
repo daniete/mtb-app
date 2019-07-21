@@ -2,133 +2,23 @@
   vertical-align: center;
 }
 
-.header {
-  overflow: hidden;
-  background-color: #f1f1f1;
-  border-bottom: 1px solid darkgrey;
-}
-
-.header .nav-container {
-  min-height: 56px
-}
-
-.header .main-navigation {
-  clear: both;
-  display: block;
-  width: 100%;
-  padding: 10px 0;
-}
-
-#header-navigation .nav-bar {
-  line-height: 56px;
-}
-
-#header-navigation .nav-bar > .row {
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header {
-  .navbar, .navbar-default {
-    margin-bottom: 0;
-    border: 0;
-    border-radius: 0;
-    background-color: white;
-  }
-}
-
-.header .diamond-img {
+.navbar-brand img {
   height: 30px;
   width: auto;
 }
 
-.header .title-container {
-  height: auto;
-  display: inline-block;
+.navbar-brand {
+  font-size: 0.9rem;
 }
 
-
-.header .title-container a:hover{
-  .diamond-img {
-      height: 40px;
-      width: auto;
-    }
-}
-
-.header .title-container .title {
-  display: inline-block;
-}
-
-.nav-menu {
-  float: right;
-}
-
-.right {
-  float: right;
-}
-
-.display-none {
-  display: block !important;
-}
-
-  @media screen and (min-width: 768px) {
-    .mobile-menu {
-      display: none;
-    }
-  }
-
-
-@media screen and (max-width: 767px) {
-
-  .title-container {
-    width: 90%;
-    margin-left: 40px;
-    margin-right: 20px;
-  }
-
-  .header a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-menu {
-    display: none;
-    float: none;
-  }
-
-  .navbar-nav {
-    margin: 0;
-
-    li {
-      height: 35px;
-
-      a {
-        font-size: 14px;
-      }
-    }
-  }
-
-  li:hover {
-    a {
-      color: dodgerblue !important;
-      font-size: 18px;
-    }
-  }
-
-  .header .main-navigation {
-    padding-bottom: 0;
+.navbar-brand:hover{
+  img {
+    height: 40px;
+    width: auto;
   }
 }
 
-@media screen and (max-width: 580px) {
-  .title-container {
-    width: 80%;
-  }
-}
-
-.header a {
-  color: black;
+.nav-link {
   text-decoration: none;
   text-align: center;
   width: auto;
@@ -146,6 +36,29 @@
 li:hover {
   a {
     color: dodgerblue !important;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
+}
+
+.navbar-collapse {
+  flex-grow: unset !important;
+
+  @media(max-width: 768px) {
+    padding-bottom: 10px;
+  }
+}
+
+@media(max-width: 768px) {
+  li {
+    height: 35px;
+
+    a {
+      height: 35px;
+      padding: 0;
+    }
+  }
+}
+
+.nav-bars {
+  color: black;
 }
