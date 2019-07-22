@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {gpxArray} from '../domain/GPX';
 import {MapService} from '../service/map.service';
+import {RideService} from '../service/ride.service';
 
 @Component({
   selector: 'legende',
@@ -9,10 +9,11 @@ import {MapService} from '../service/map.service';
 })
 export class LegendComponent implements OnInit {
 
-  gpxFiles = gpxArray;
+  gpxFiles = this.rideService.ride;
 
   constructor(
-    public mapService: MapService
+    public mapService: MapService,
+    private rideService: RideService
   ) {
 
   }
