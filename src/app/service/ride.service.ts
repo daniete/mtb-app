@@ -1,17 +1,19 @@
 import {Injectable} from '@angular/core';
 import {GpxEnum} from '../domain/GPX';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RideService {
 
-  ride;
+  private rideSource = new BehaviorSubject(null);
+  ride = this.rideSource.asObservable();
 
   allRides = GpxEnum;
 
   setRide(ride) {
-    this.ride = this.allRides[ride];
+    this.rideSource.next(this.allRides[ride]);
   }
 
 }

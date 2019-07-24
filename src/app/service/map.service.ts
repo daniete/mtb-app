@@ -117,6 +117,7 @@ export class MapService {
           return scope.getStyle()[feature.getGeometry().getType()];
         }
       });
+      console.log(dragDropLayer);
       scope.map.addLayer(dragDropLayer);
       scope.map.getView().fit(vectorSource.getExtent());
 

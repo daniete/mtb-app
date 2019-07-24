@@ -19,6 +19,11 @@ export class LegendComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.rideService.ride.subscribe(gpxFiles => this.gpxFiles = gpxFiles)
+  }
+
+  setRide(ride) {
+    this.rideService.setRide(ride);
   }
 
 }
