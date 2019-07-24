@@ -30,7 +30,7 @@ export class GpxEnum {
     isDragDropLayer: false
   }
 ];
-  static GRANCANARIA2 : gpxType[] = [{
+  static SICILY : gpxType[] = [{
       name: 'Testritje',
       path: '',
       shown: true,

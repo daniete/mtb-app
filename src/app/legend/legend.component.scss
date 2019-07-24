@@ -1,5 +1,6 @@
 $primary-color: blue;
 $light-color: green;
+
 .panel {
   overflow: hidden;
   max-height: 100%;
@@ -12,10 +13,13 @@ $light-color: green;
 .panel-body {
   padding: 5px;
   overflow: auto;
+  background-color: white;
 }
 
 .panel-default  > .panel-heading {
-  padding: 0px;
+  padding: 5px;
+  color: white;
+  background-color: black;
 }
 
 .legende-panel {

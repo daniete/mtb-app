@@ -88,9 +88,10 @@
   left: .5em;
 }
 .ol-full-screen {
-  right: .5em;
-  top: .5em;
+  left: .5em;
+  top: 8em;
 }
+
 @media print {
   .ol-control {
     display: none;
